@@ -120,7 +120,7 @@ void remove_product(struct Products* &list, int &n){
 
     for (int i = 0; i < n; i++){
         if (deleted_name.compare(list[i].name)){
-            for (int j = i; j < n; j++){
+            for (int j = i; j < n - 1; j++){
                 list[j] = list[j + 1];
             }
             new_size--;
