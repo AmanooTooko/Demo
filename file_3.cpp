@@ -28,7 +28,7 @@ struct Products{
     }
 };
 
-void print_products(struct Products *list, int n);
+void print_products(const struct Products *list, int n);
 void insert_new_product(struct Products* &list, int &n);
 void remove_product(struct Products* &list, int &n);
 void press_to_continue();
@@ -80,7 +80,7 @@ int main(){
     return 0;
 }
 
-void print_products(struct Products *list, int n){
+void print_products(const struct Products *list, int n){
     if (n < 1){
         std::cout << "You don't have any products" << std::endl;
         return;
@@ -107,7 +107,7 @@ void insert_new_product(struct Products* &list, int &n){
     new_list[new_size - 1] = new_products;
     list = new_list;
     n = new_size;
-    delete[] new_list;
+    // delete[] new_list;
 }   
 
 void remove_product(struct Products* &list, int &n){
@@ -135,7 +135,7 @@ void remove_product(struct Products* &list, int &n){
     delete[] list;
     list = new_list;
     n = new_size;
-    delete[] new_list;
+    // delete[] new_list;
 }
 
 void press_to_continue(){
@@ -147,5 +147,5 @@ void menu(){
     std::cout << "1-Print product" << std::endl
         << "2-Insert product" << std::endl
         << "3-Remove product" << std::endl
-        << "4-Exit" << std::endl;
+        << "0-Exit" << std::endl;
 }
